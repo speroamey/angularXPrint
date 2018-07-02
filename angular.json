@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "angularXprint": {
+      "root": "projects/angular-xprint",
+      "sourceRoot": "projects/angular-xprint/src",
+      "projectType": "library",
+      "prefix": "sp-ngx-print",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-xprint/tsconfig.lib.json",
+            "project": "projects/angular-xprint/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/angular-xprint/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-xprint/src/test.ts",
+            "tsConfig": "projects/angular-xprint/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-xprint/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-xprint/tsconfig.lib.json",
+              "projects/angular-xprint/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angularPrint"

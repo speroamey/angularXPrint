@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AngularXprintModule} from 'angularXprint';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +9,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularXprintModule
   ],
   providers: [],
   bootstrap: [AppComponent]
